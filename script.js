@@ -1,4 +1,4 @@
-function createPosterSvg(title, mood, accent) {
+function createPosterSvg(title, mood, accent, image) {
   const safeTitle = title
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -18,6 +18,7 @@ function createPosterSvg(title, mood, accent) {
       <circle cx="630" cy="290" r="220" fill="${accent}" opacity="0.20" />
       <circle cx="220" cy="950" r="260" fill="#ffffff" opacity="0.08" />
       <rect x="120" y="140" width="560" height="80" rx="20" fill="rgba(255,255,255,0.08)" />
+      <image href="${image}" x="250" y="240" width="300" height="420" preserveAspectRatio="xMidYMid slice" />
       <text x="400" y="192" text-anchor="middle" fill="#f7d154" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="6">NOW SHOWING</text>
       <text x="400" y="560" text-anchor="middle" fill="#f6f0ff" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="700">${safeTitle}</text>
       <text x="400" y="650" text-anchor="middle" fill="#d8cee7" font-family="Segoe UI, Arial, sans-serif" font-size="28" letter-spacing="8">${safeMood}</text>
@@ -111,12 +112,11 @@ const randomButton = document.getElementById('randomButton');
 function createMovieCard(movie) {
   const card = document.createElement('article');
   card.className = 'movie-card';
+  
+  const posterSrc = createPosterSvg(movie.title, movie.mood, '#f7d154', movie.image);
 
-  const posterSrc = movie.image || movie.linkImage || '';
+  const posterHtml = `<img class="poster-image" src="${posterSrc}" alt="${movie.title} movie poster" />`;
 
-  const posterHtml = posterSrc
-    ? `<img class="poster-image" src="${posterSrc}" alt="${movie.title} movie poster" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=utf-8,${encodeURIComponent('<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"1200\" viewBox=\"0 0 800 1200\"><rect width=\"800\" height=\"1200\" fill=\"#111111\"/><rect x=\"24\" y=\"24\" width=\"752\" height=\"1152\" rx=\"36\" fill=\"#1c1c1c\" stroke=\"#ffffff33\" stroke-width=\"4\"/><text x=\"400\" y=\"580\" text-anchor=\"middle\" fill=\"#f6f0ff\" font-family=\"Segoe UI, Arial, sans-serif\" font-size=\"54\" font-weight=\"700\">Poster unavailable</text></svg>')};" />`
-    : '<div class="poster-image poster-fallback">Poster unavailable</div>';
 
   card.innerHTML = `
     ${posterHtml}
