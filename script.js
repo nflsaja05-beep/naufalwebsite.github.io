@@ -92,7 +92,7 @@ const movies = [
     genre: 'Comedy',
     synopsis: 'Mr. Bean wins a trip to Cannes by church raffle. En route, he accidentally separates a young Russian boy named Stepan from his filmmaker father.',
     rating: '6.4',
-    image: 'images/Mr.bean.jpg',
+    image: 'Mr.bean.jpg',
   },
   {
     title: 'Toy Story 5 (2025)',
@@ -100,7 +100,7 @@ const movies = [
     genre: 'Animation, Family',
     synopsis: ' 8-year-old Bonnie becomes addicted to a high-tech tablet named Lilypad. Jessie steps up as the new leader, and the traditional toys face their ultimate challenge when playtime goes digital',
     rating: '7.5',
-    image: 'images/Toy_Story_5.jpg',
+    image: 'Toy_Story_5.jpg',
   },
 ];
 
