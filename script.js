@@ -1,4 +1,4 @@
-function createPosterSvg(title, mood, accent) {
+function createPosterSvg(title, mood, accent, image) {
   const safeTitle = title
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
