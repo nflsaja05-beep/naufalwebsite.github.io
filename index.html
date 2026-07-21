@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Movie Theater</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="theater-shell">
+    <header class="lobby-bar">
+      <div class="marquee">
+        <span>Welcome to the Mood Movie Theater</span>
+      </div>
+      <div class="stage-title">
+        <h1>Movie Theater Mood Picks</h1>
+        <p>Choose how you feel and see films that fit the vibe of your day.</p>
+      </div>
+    </header>
+
+    <section class="filter-lobby">
+      <div class="filter-card">
+        <h2>Pick your mood</h2>
+        <label for="moodSelect">Current mood</label>
+        <select id="moodSelect" aria-label="Select your mood">
+          <option value="all">All moods</option>
+          <option value="happy">Happy</option>
+          <option value="adventurous">Adventurous</option>
+          <option value="chill">Chill</option>
+          <option value="inspired">Inspired</option>
+          <option value="romantic">Romantic</option>
+          <option value="uplifting">Uplifting</option>
+        </select>
+        <button id="randomButton" class="accent-button">Show a film
+      </div>
+      <div class="explainer-card">
+        <h2>HI!! Hahah i can bealieve this is working</h2>
+        <p>masih banyak yang kurang sih ini hahah tapi gapapa lah. owh yaa u only can see the movie poster, bukan trailer apalagi filmnya wkwkw.</p>
+      </div>
+    </section>
+
+    <section class="screenroom">
+      <div class="screen-overlay">
+        <span class="spotlight"></span>
+        <span class="spotlight"></span>
+      </div>
+      <div class="poster-grid" id="movieGrid"></div>
+    </section>
+
+    <section class="features-panel">
+      <h2>Udah ya gitu aja hahah, nah if u want request another website just call me WKWWKKW</h2>
+    </section>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
